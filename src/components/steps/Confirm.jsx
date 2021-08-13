@@ -40,13 +40,13 @@ const Confirm = ({
   return (
     <>
       <h1>Is everything correct?</h1>
-      <h2>If not, back to previous cards.</h2>
-      <p>Your traget: {targetName()}</p>
-      <p>Your gender: {gender}</p>
-      <p>Your weight: {weight}</p>
-      <p>Your height: {height}</p>
-      <p>Your age: {age}</p>
-      <p>Your activity: {activityName()}</p>
+      <h4>If not, back to previous cards.</h4>
+      <p><b>Your traget:</b> {targetName()}</p>
+      <p><b>Your gender:</b> {gender}</p>
+      <p><b>Your weight:</b> {weight} kg</p>
+      <p><b>Your height:</b> {height} cm</p>
+      <p><b>Your age:</b> {age}</p>
+      <p><b>Your activity:</b> {activityName()}</p>
     </>
   );
 };

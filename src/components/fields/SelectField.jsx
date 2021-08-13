@@ -4,7 +4,7 @@ import { updateData } from "../../actions";
 
 const NumberField = ({ id, options, data, updateData }) => {
   const selectOptions = options.map((option) => (
-    <option value={option.value} disabled={option.disabled ? true : false}>
+    <option key={option.value} value={option.value} disabled={option.disabled ? true : false}>
       {option.text}
     </option>
   ));
