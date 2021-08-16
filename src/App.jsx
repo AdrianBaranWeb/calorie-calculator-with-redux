@@ -22,6 +22,7 @@ const App = ({ data }) => {
             options={[
               { value: "", text: "Choose your target", disabled: true },
               { value: "300", text: "Put on weight" },
+              { value: "0", text: "Keep weight" },
               { value: "-1000", text: "Lost weight" },
             ]}
           />

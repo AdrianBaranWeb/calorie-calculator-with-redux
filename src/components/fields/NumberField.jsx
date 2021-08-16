@@ -3,10 +3,13 @@ import { connect } from "react-redux";
 import { updateData } from "../../actions";
 
 const NumberField = ({ id, data, updateData }) => {
-  const checkData = () => data[id] <= 0 ? false : true;
-
-  const increment = () => updateData({[id]: +data[id] + 1 });
-  const decrement = () => checkData() ? updateData({[id]: +data[id] - 1 }) : null
+  const increment = () => {
+    return updateData({ [id]: +data[id] + 1 });
+  };
+  const decrement = () => {
+    const value = +data[id] - 1
+    return value <= 0  ? null : updateData({ [id]: value });
+  };
 
   return (
     <>
@@ -16,14 +19,13 @@ const NumberField = ({ id, data, updateData }) => {
           -
         </button>
         <input
-          type='number'
+          type="number"
           name={id}
           id={id}
           value={data[id]}
           onChange={(e) => {
-            checkData()
-              ? updateData({ [id]: e.target.value })
-              : updateData({ [id]: 0 });
+            const value = e.target.value 
+            return +value < 0 ? updateData({ [id]: 0}) : updateData({ [id]: value})
           }}
         />
         <button className="controlled-input__button" onClick={increment}>

@@ -6,10 +6,8 @@ import { Provider } from "react-redux";
 import App from "./App";
 import reducers from './reducers'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-
 ReactDOM.render(
-  <Provider store={createStore(reducers, composeEnhancers())}>
+  <Provider store={createStore(reducers)}>
     <App />
   </Provider>,
   document.getElementById("root"),

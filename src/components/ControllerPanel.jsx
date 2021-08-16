@@ -9,9 +9,9 @@ const ControllerPanel = ({data, updateData}) => {
     const {step, target, gender, weight, height, age, activity} = data
     if(target === '') return true
     if(step === 2 && gender === '') return true
-    if(step === 2 && weight === 0) return true
-    if(step === 2 && height === 0) return true
-    if(step === 2 && age === 0) return true
+    if(step === 2 && weight <= 0) return true
+    if(step === 2 && height <= 0) return true
+    if(step === 2 && age <= 0) return true
     if(step === 2 && activity === '') return true
     return false
   }
