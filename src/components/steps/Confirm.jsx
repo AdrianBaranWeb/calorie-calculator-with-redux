@@ -20,23 +20,6 @@ const Confirm = ({
     }
   }
 
-  const activityName = () => {
-    switch (activity) {
-      case '0':
-        return 'Very Low'
-      case '1':
-        return 'Low'
-      case '2':
-        return 'Middle'
-      case '3':
-        return 'High'
-      case '4':
-        return 'Very High'
-      default:
-        return <Error />
-    }
-  }
-
   return (
     <>
       <h1>Is everything correct?</h1>
@@ -46,7 +29,7 @@ const Confirm = ({
       <p><b>Your weight:</b> {weight} kg</p>
       <p><b>Your height:</b> {height} cm</p>
       <p><b>Your age:</b> {age}</p>
-      <p><b>Your activity:</b> {activityName()}</p>
+      <p><b>Your activity:</b> {activity}</p>
     </>
   );
 };

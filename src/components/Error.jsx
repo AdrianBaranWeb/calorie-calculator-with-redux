@@ -1,5 +1,5 @@
 import React from "react";
 
-const Error = () => <h2>Unexpected behavior, pleas try again.</h2>;
+const Error = () => <span>Unexpected behavior, pleas try again.</span>;
 
 export default Error;

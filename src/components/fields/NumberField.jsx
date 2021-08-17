@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import { updateData } from "../../actions";
 
 const NumberField = ({ id, data, updateData }) => {
+  
   const increment = () => {
     return updateData({ [id]: +data[id] + 1 });
   };
+
   const decrement = () => {
     const value = +data[id] - 1
     return value <= 0  ? null : updateData({ [id]: value });

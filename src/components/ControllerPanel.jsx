@@ -21,9 +21,8 @@ const ControllerPanel = ({data, updateData}) => {
       <button disabled={data.step === 1} onClick={() => updateData({step: data.step - 1})}>
         Prev
       </button>
-
       <button disabled={disabledNext()} onClick={() => updateData({step: data.step + 1})}>
-        Next
+        {data.step === steps - 1 ? 'Submit' : 'Next'}
       </button>
     </div>
   );

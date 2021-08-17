@@ -30,11 +30,11 @@ const FormPersonDetails = () => {
           id="activity"
           options={[
             { value: "", text: "Choose your activity", disabled: true },
-            { value: "0", text: "Very low" },
-            { value: "1", text: "Low" },
-            { value: "2", text: "Middle" },
-            { value: "3", text: "High" },
-            { value: "4", text: "Very High" },
+            { value: "Very low", text: "Very low" },
+            { value: "Low", text: "Low" },
+            { value: "Middle", text: "Middle" },
+            { value: "High", text: "High" },
+            { value: "Very high", text: "Very high" },
           ]}
         />
       </div>
