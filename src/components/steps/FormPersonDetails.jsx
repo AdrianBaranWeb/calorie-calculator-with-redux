@@ -38,7 +38,7 @@ const FormPersonDetails = () => {
           ]}
         />
       </div>
-      <small>Weight in kg and Height in cm</small>
+      <small>Weight in kg and height in cm</small>
     </>
   );
 };

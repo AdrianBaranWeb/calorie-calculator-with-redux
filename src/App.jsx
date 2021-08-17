@@ -7,7 +7,7 @@ import FormPersonDetails from "./components/steps/FormPersonDetails";
 import Confirm from "./components/steps/Confirm";
 import Succsess from "./components/steps/Success";
 import Error from "./components/Error";
-import "./App.css";
+import "./App.scss";
 
 export const steps = 4;
 
@@ -20,10 +20,10 @@ const App = ({ data }) => {
           <SelectField
             id="target"
             options={[
-              { value: "", text: "Choose your target", disabled: true },
+              { value: "", text: 'Choose your target', disabled: true },
               { value: "300", text: "Put on weight" },
               { value: "0", text: "Keep weight" },
-              { value: "-1000", text: "Lost weight" },
+              { value: "-1000", text: "Lose weight" },
             ]}
           />
         );
