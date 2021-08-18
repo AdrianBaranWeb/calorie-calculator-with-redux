@@ -11,6 +11,19 @@ import "./App.scss";
 
 export const steps = 4;
 
+export const targetName = (target) => {
+  switch (target) {
+    case '300':
+      return 'Put on weight'
+    case '-1000':
+      return 'Lost weight'
+    case '0':
+      return 'Keep weight'
+    default:
+      return <Error />
+  }
+}
+
 const App = ({ data }) => {
   //Currently displayed step
   const currentStep = () => {

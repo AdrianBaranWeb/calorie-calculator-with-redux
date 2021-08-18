@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const calculatorData = {
+export const defaultCalculatorData = {
   step: 1,
   target: "",
   gender: "male",
@@ -8,9 +8,10 @@ const calculatorData = {
   height: 150,
   age: 18,
   activity: "",
+  score: null
 };
 
-const calculatorDataReducer = (data = calculatorData, action) => {
+const calculatorDataReducer = (data = defaultCalculatorData, action) => {
   switch (action.type) {
     case "UPDATE_DATA":
       return { ...data, ...action.payload };

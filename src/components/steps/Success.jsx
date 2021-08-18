@@ -1,22 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { connect } from "react-redux";
+
+import { updateData } from "../../actions";
 
 import Error from "../Error";
 
-const Succsess = ({ data }) => {
-  const {gender, target, weight, height, age, activity } = data;
-  //physical activity level
-  let pal = null;
+const Succsess = ({ data, updateData }) => {
+  const {gender, target, weight, height, age, activity, score } = data;
 
-  const maleModel = () => {
-    return pal * (66.47 + 13.75 * +weight + 5 * +height + 6.775 * +age) + +target
-  }
-  const femaleModel = () => {
-    return pal * (655.1 + 9.563 * +weight + 1.85 * +height - 4.676 * +age) + +target
-  }
+  useEffect(() => {
+    let pal = null
 
-  //Final calculate
-  const calculate = () => {
+    const maleModel = () => {
+      return pal * (66.47 + 13.75 * +weight + 5 * +height + 6.775 * +age) + +target
+    }
+    const femaleModel = () => {
+      return pal * (655.1 + 9.563 * +weight + 1.85 * +height - 4.676 * +age) + +target
+    }
+
     const isMale = gender === "male" ? true : false
     
     switch (activity) {
@@ -41,15 +42,16 @@ const Succsess = ({ data }) => {
 
     const score = isMale ? maleModel() : femaleModel()
 
-    if (score < 1300) return 1300;
-    return Math.round(score * 100) / 100;
-  }
+    if (score < 1300) return updateData({score: 1300});
+    return updateData({score: Math.round(score * 100) / 100});
+    
+  }, [gender, target, weight, height, age, activity, updateData]);
 
-  return <h2>You should consume {calculate()} calories per day.</h2>;
+  return <h2>You should consume {score} calories per day.</h2>;
 };
 
 const mapStateToProps = (state) => {
   return { data: state.data };
 };
 
-export default connect(mapStateToProps, {})(Succsess);
+export default connect(mapStateToProps, {updateData})(Succsess);
