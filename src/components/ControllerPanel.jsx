@@ -23,11 +23,12 @@ const ControllerPanel = ({ data, updateData }) => {
 
   if (data.step === steps)
     return (
-      <div className={`controllers `}>
+      <div className='controllers'>
         <button onClick={() => updateData(defaultCalculatorData)}>
           Refill
         </button>
         <a
+          className='controllers__link'
           href={`data:text/plain;charset=utf-8,${encodeURIComponent(download)}`}
           download="data.txt"
         >
@@ -37,7 +38,7 @@ const ControllerPanel = ({ data, updateData }) => {
     );
 
   return (
-    <div className={`controllers `}>
+    <div className='controllers'>
       <button
         disabled={step === 1}
         onClick={() => updateData({ step: step - 1 })}

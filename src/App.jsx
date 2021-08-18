@@ -57,6 +57,7 @@ const App = ({ data }) => {
         <h1>Calorie Calculator</h1>
         <div className="fieldset">{currentStep()}</div>
         <ControllerPanel />
+        <footer><small>Copyright {'\u00a9'.normalize()} 2021 - <a className='standard-link' href="https://www.facebook.com/WebsiteAB-104439048525721/" target="_blank" rel="noopener noreferrer">WebsiteAB</a></small></footer>
       </div>
       <div className="hero-bg"></div>
     </div>
